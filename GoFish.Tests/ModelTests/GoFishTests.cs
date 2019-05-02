@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GoFish;
 using System;
+using System.Collections.Generic;
+using GoFish;
 
 namespace GoFish.Tests
 {
@@ -31,6 +32,17 @@ namespace GoFish.Tests
       var result = newDeck.GetRandomCard();
 
       Assert.IsFalse(newDeck.CardList.Contains(result));
+    }
+
+    [TestMethod]
+    public void TestGameNewGame()
+    {
+      Game newGame = new Game(5);
+      List<Player> players = new List<Player>() { "Player 1", "Player 2", "Player 3" ,"Player 4" ,"Player 5"};
+
+      CollectionAssert.AreEqual(players, newGame.GetPlayerList);
+      Assert.AreEqual(5, newGame.PlayerCount());
+
     }
 
 
