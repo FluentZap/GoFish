@@ -57,5 +57,10 @@ namespace GoFish
       string suitName = _suits[card / 13];
       return cardName + " of " + suitName;
     }
+
+    public static bool IsTheSame(int card1, int card2)
+    {      
+      return (card1 % 13  == card2 % 13)
+    }
   }
 }

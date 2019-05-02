@@ -10,8 +10,10 @@ namespace GoFish.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-
-      return View();
+      Game g = CurrentGame.ThisGame;
+      //CurrentGame.ThisGame.Players[0].Hand
+      Console.WriteLine(g.Players[g.CurrentTurn].Name);
+      return View(g.Players[g.CurrentTurn]);
     }
 
   }

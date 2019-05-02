@@ -1,0 +1,21 @@
+@using GoFish;
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Go Fish</title>
+  </head>
+  <body>
+    <h1>@Model.Name</h1>
+    <ul>
+      @foreach (int card in Model.Hand)
+      {
+        <form action='/game/turn' method='post'>
+        <input id="card" name='card' type='hidden' value="@card">
+          <button class="btn" type='submit'>@Cards.GetName(card)</button>
+        </form>
+      }
+    </ul>
+  </body>
+</html>

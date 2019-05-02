@@ -38,13 +38,34 @@ namespace GoFish.Tests
     public void TestGameNewGame()
     {
       Game newGame = new Game(5);
-      List<Player> players = new List<Player>() { "Player 1", "Player 2", "Player 3" ,"Player 4" ,"Player 5"};
+      List<Player> players = new List<Player>();
+      players.Add(new Player("Player 1"));
+      players.Add(new Player("Player 2"));
+      players.Add(new Player("Player 3"));
+      players.Add(new Player("Player 4"));
+      players.Add(new Player("Player 5"));
 
-      CollectionAssert.AreEqual(players, newGame.GetPlayerList);
+      for (int i = 0; i < newGame.PlayerCount() - 1; i++) {
+        Assert.AreEqual(newGame.Players[i].Name, players[i].Name);
+      }
+
       Assert.AreEqual(5, newGame.PlayerCount());
-
     }
 
+
+    [TestMethod]
+    public void TestGameDealStartingCards()
+    {
+      Game newGame = new Game(2);
+      int player1CardCount = newGame.Players[0].Hand.Count;
+      int player2CardCount = newGame.Players[1].Hand.Count;
+      int deckCardCount = newGame.Deck.CardsLeft();
+
+
+      Assert.AreEqual(42, deckCardCount);
+      Assert.AreEqual(5, player1CardCount);
+      Assert.AreEqual(5, player2CardCount);
+    }
 
 
 
