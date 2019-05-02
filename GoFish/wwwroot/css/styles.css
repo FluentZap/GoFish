@@ -1,0 +1,96 @@
+/* font-family: 'Exo', sans-serif; */
+/* black #000000;
+ink #062f4f
+embers #b82601; */
+
+
+html, body {
+  background-image: url(../img/backgroundForest.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  height: 100%;
+  font-family: 'Black And White Picture', sans-serif;
+  font-size: 80%;
+  image-rendering: pixelated;
+
+}
+
+
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+a {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+}
+
+hr {
+  background-color: black;
+}
+
+.btn {
+  /* background-color: rgba(100, 100, 100, 0.5); */
+  height: 40rem;
+  width: 20rem;
+  margin: 1rem;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  transition: all .3s;
+
+
+}
+
+.spriteCont {
+    width: 256px;
+    height: 256px;
+}
+
+.btn-dark {
+  background-color: #062f4f;
+
+
+}
+.btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active, .open>.dropdown-toggle.btn-dark {
+    background-color: #2d6591;
+    transform: scale(1.1);
+}
+
+.btn img {
+  /* width: 300px; */
+  width: 100%;
+  background-size: cover;
+  margin-top: 30%;
+  border: 1px solid white;
+}
+
+.container {
+  padding-top: 100px;
+}
+
+
+#image {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  background: url(../img/Chill.png) 0px 0px;
+
+}
+
+
+#feed, #train {
+  background-image: url(../img/button/button.png);
+  background-size: cover;
+  image-rendering: pixelated;
+  width: 100px;
+  height: 100px;
+}
