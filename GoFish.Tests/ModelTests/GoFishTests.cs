@@ -18,11 +18,19 @@ namespace GoFish.Tests
     public void TestDeckReshuffle()
     {
       Deck newDeck = new Deck();
-      newDeck.Reshuffle();
 
       var result = newDeck.CardsLeft();
 
       Assert.AreEqual(52, result);
+    }
+
+    [TestMethod]
+    public void TestDeckGetRandomCard()
+    {
+      Deck newDeck = new Deck();
+      var result = newDeck.GetRandomCard();
+
+      Assert.IsFalse(newDeck.CardList.Contains(result));
     }
 
 

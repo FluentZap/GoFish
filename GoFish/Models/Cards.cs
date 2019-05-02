@@ -8,12 +8,41 @@ namespace GoFish
   //when it is created add one of every card
 
   //Methods
-  //Get random cards
+  //Get random card and remove from the deck
   //draw hand
 
   public class Deck
   {
+    private List<int> _cards = new List<int>();
 
+    public List<int> CardList { get => _cards; }
+
+    public int GetRandomCard()
+    {
+      Random rnd = new Random();
+      int index = rnd.Next(0, _cards.Count - 1);
+      int pulledCard = _cards[index];
+      _cards.Remove(index);
+      return pulledCard;
+    }
+
+    public Deck()
+    {
+      Reshuffle();
+    }
+
+    public void Reshuffle()
+    {
+      _cards.Clear();
+      for (int i = 0; i < 52; i++) {
+        _cards.Add(i);
+      }
+    }
+
+    public int CardsLeft()
+    {
+      return _cards.Count;
+    }
 
   }
 
